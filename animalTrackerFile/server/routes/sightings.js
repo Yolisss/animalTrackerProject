@@ -1,4 +1,4 @@
-//server connecting to db
+//server connected to db
 import db from "../db/DbConnection";
 import express from "express";
 //telling express for which handlers to use
@@ -9,9 +9,11 @@ const router = express.Router();
 //within it we are using a try/catch block
 router.get("/", async function (req, res) {
   try {
-    const species = await db.any("SELECT * FROM species ORDER BY id", [true]);
-    //send the data back to the server based on the species that came from the db
-    res.send(species);
+    const sightings = await db.any("SELECT * FROM sightings ORDER BY id", [
+      true,
+    ]);
+    //send the data back to the server based on the sightings that came from the db
+    res.send(sightings);
     //catch unexpected errors
     //console log err
     //and send response with a 400 error to client
