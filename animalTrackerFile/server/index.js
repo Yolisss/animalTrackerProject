@@ -2,6 +2,13 @@ import express from "express";
 import cors from "cors";
 //why?
 import bodyParser from "body-Parser";
+//routers from db
+import db from "./db/dbConnection.js";
+
+//allowed to use this router because we exported it from species.js
+import speciesRouter from "./routes/species.js";
+import sightingsRouter from "./routes/sightings.js";
+import individualsRouter from "./routes/individuals.js";
 
 const app = express();
 const PORT = 8080;
@@ -9,13 +16,6 @@ const PORT = 8080;
 app.use(cors());
 //why?
 app.use(bodyParser.json());
-
-//routers from db
-import db from "./db/DbConnection.js";
-//allowed to use this router because we exported it from species.js
-import speciesRouter from "./routes/species.js";
-import sightingsRouter from "./routes/sightings";
-import individualsRouter from "./routes/individuals";
 
 //once path is typed in URL("/species"), speciesRouter will show us
 //species info from species.js (refer to line 16)

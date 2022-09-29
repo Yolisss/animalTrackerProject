@@ -1,5 +1,5 @@
 //server connecting to db
-import db from "../db/DbConnection";
+import db from "../db/dbConnection.js";
 import express from "express";
 //telling express for which handlers to use
 const router = express.Router();
