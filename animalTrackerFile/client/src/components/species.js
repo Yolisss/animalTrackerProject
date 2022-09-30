@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const Species = () => {
   const [species, setSpecies] = useState([]);
 
-  //get individuals data table
+  //get species data table from backend
   const getSpecies = async () => {
     const response = await fetch(`http://localhost:8080/species`);
     const data = await response.json();
