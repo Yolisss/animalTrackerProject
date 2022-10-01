@@ -72,6 +72,7 @@ const Individuals = () => {
       seen_on: state.seen_on,
     };
     console.log(newIndividual);
+    //New Indiv data will be sent to server and new data will be posted
     const response = await fetch("http://localhost:8080/individuals", {
       method: "POST",
       headers: {
@@ -89,6 +90,7 @@ const Individuals = () => {
 
   //delete individual handler
   const handleDeleteIndividual = async (deleteId) => {
+    //
     const response = await fetch(
       `http://localhost:8080/individuals/${deleteId}`,
       {
