@@ -1,3 +1,7 @@
+//since people don't have access to your sql
+//this allows other people to use/read your code
+//also a backup for your data in your database
+
 // server/db/db-connection.js;
 import pgPromise from "pg-promise";
 
